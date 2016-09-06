@@ -1,33 +1,8 @@
 require 'date'
+require_relative './west_midtown.rb'
+require_relative './downtown.rb'
 
 LOCATIONS = ['Downtown', 'West Midtown'].freeze
-DOWNTOWN_SPOTS = [
-  "Alibaba's",
-  "Rosa's",
-  'The Food Shoppe',
-  'Naanstop',
-  'Dua',
-  'Blossom Tree',
-  "Moe's",
-  'Buenos Dias'
-].freeze
-WEST_MIDTOWN_SPOTS = [
-  'Yeah Burger',
-  'West Egg',
-  'Bone Garden',
-  'Hankook',
-  'Figo',
-  'Raku',
-  'Thumbs Up',
-  'Tom + Chee',
-  "Amelie's",
-  'Six Feet Under',
-  'Stationside',
-  "Delia's",
-  'Touch (Indian)',
-  'Zen on 10',
-  "Pauley's Crepes"
-].freeze
 
 def starting_prompt
   if Date.today.tuesday?
@@ -53,9 +28,9 @@ end
 def pick_spot
   case @locale_number
   when 1
-    puts DOWNTOWN_SPOTS.sample
+    puts Downtown::LUNCH_SPOTS.sample
   when 2
-    puts WEST_MIDTOWN_SPOTS.sample
+    puts WestMidtown::LUNCH_SPOTS.sample
   else
     puts "Please enter a valid number option.\n"
     print_locations
