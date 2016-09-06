@@ -7,7 +7,7 @@ class Downtown
   'Dua',
   'Blossom Tree',
   "Moe's",
-  'Buenos Dias'
+  'Buenos Dias',
   'Taqueria on Broad'
   ].freeze
 end
